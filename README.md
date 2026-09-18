@@ -146,4 +146,4 @@ npm start
 ## 👥 Authors
 
 * **Souvik (Frontend & UX Lead)** — Next.js 15 UI, Monaco Editor, STAR Form, Dossier & Design System.
-* **Cloud & AI Lead** — AWS Bedrock (Nova Lite), DynamoDB, AWS Lambda, API Gateway & Amplify CI/CD.
+* **Asif Cloud & AI Lead** — AWS Bedrock (Nova Lite), DynamoDB, AWS Lambda, API Gateway & Amplify CI/CD.
