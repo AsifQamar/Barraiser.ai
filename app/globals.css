@@ -1,13 +1,97 @@
 @import "tailwindcss";
 
-:root {
-  --background: #090b10;
-  --foreground: #f1f5f9;
-  --surface: #0e121a;
-  --surface-hover: #131924;
-  --surface-raised: #141926;
-  --border: #1a2233;
-  --border-subtle: #141a26;
+@theme inline {
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-elevated: var(--elevated);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-critical: var(--critical);
+  --color-critical-foreground: var(--critical-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+}
+
+:root,
+.dark {
+  color-scheme: dark;
+
+  --background: oklch(0.16 0.006 60);
+  --foreground: oklch(0.95 0.004 80);
+
+  --surface: oklch(0.196 0.006 60);
+  --surface-2: oklch(0.224 0.006 60);
+  --elevated: oklch(0.252 0.007 60);
+
+  --card: oklch(0.196 0.006 60);
+  --card-foreground: oklch(0.95 0.004 80);
+  --popover: oklch(0.216 0.007 60);
+  --popover-foreground: oklch(0.95 0.004 80);
+
+  --primary: oklch(0.77 0.145 62);
+  --primary-foreground: oklch(0.2 0.03 60);
+  --primary-soft: oklch(0.77 0.145 62 / 12%);
+
+  --secondary: oklch(0.252 0.007 60);
+  --secondary-foreground: oklch(0.92 0.004 80);
+  --muted: oklch(0.252 0.007 60);
+  --muted-foreground: oklch(0.66 0.01 70);
+  --accent: oklch(0.27 0.008 60);
+  --accent-foreground: oklch(0.95 0.004 80);
+
+  --success: oklch(0.74 0.14 158);
+  --success-foreground: oklch(0.19 0.03 158);
+  --info: oklch(0.72 0.11 235);
+  --info-foreground: oklch(0.19 0.03 235);
+  --warning: oklch(0.81 0.13 78);
+  --warning-foreground: oklch(0.2 0.03 78);
+  --critical: oklch(0.68 0.185 18);
+  --critical-foreground: oklch(0.97 0.01 18);
+
+  --destructive: oklch(0.68 0.185 18);
+
+  --border: oklch(1 0 0 / 8%);
+  --border-strong: oklch(1 0 0 / 14%);
+  --input: oklch(1 0 0 / 10%);
+  --ring: oklch(0.77 0.145 62 / 60%);
+
+  --radius: 0.75rem;
 }
 
 body {
@@ -23,28 +107,74 @@ code, kbd, samp, pre {
 }
 
 /* Precision scrollbars */
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+* {
+  scrollbar-width: thin;
+  scrollbar-color: oklch(1 0 0 / 12%) transparent;
+}
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-thumb {
+  background: oklch(1 0 0 / 14%);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: oklch(1 0 0 / 22%);
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #242e42;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #364461;
-}
-
-/* Clean text selection */
 ::selection {
-  background-color: rgba(245, 158, 11, 0.25);
+  background-color: oklch(0.77 0.145 62 / 25%);
   color: #fef3c7;
+}
+
+@utility grid-lines {
+  background-image: linear-gradient(oklch(1 0 0 / 3.5%) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(1 0 0 / 3.5%) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes loading-bar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+.animate-loading-bar {
+  animation: loading-bar 1.3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 /* Formal Print Stylesheet for Hiring Dossier */
@@ -53,18 +183,12 @@ code, kbd, samp, pre {
     background: #ffffff !important;
     color: #0f172a !important;
   }
-  header, footer, nav, button, a[href="/"] {
+  header, footer, nav, button, a[href="/"], .fixed {
     display: none !important;
   }
   .print-clean {
     border: 1px solid #cbd5e1 !important;
     background: #ffffff !important;
     color: #0f172a !important;
-  }
-  .print-text-dark {
-    color: #0f172a !important;
-  }
-  .print-text-muted {
-    color: #475569 !important;
   }
 }

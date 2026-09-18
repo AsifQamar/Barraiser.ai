@@ -1,5 +1,5 @@
-import ScreenIntake from "@/components/ScreenIntake";
+import { SetupScreen } from "@/components/barraiser/setup-screen";
 
 export default function HomePage() {
-  return <ScreenIntake />;
+  return <SetupScreen />;
 }

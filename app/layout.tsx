@@ -1,7 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import LayoutShell from "@/components/LayoutShell";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,9 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BarRaiser.ai — Amazon Bar Raiser Mock Interview Copilot",
+  title: "BarRaiser.ai — AI Mock Interview Copilot",
   description:
-    "Simulate an authentic Amazon Bar Raiser interview round powered by AWS Bedrock Nova Lite, Monaco code editor, and STAR methodology auditing.",
+    "An AI-powered mock interview copilot for software engineers preparing for high-level technical and behavioral interviews.",
+};
+
+export const viewport: Viewport = {
+  colorScheme: "dark",
+  themeColor: "#141413",
 };
 
 export default function RootLayout({
@@ -29,8 +33,8 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col bg-[#080b11] text-slate-100 font-sans">
-        <LayoutShell>{children}</LayoutShell>
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
+        {children}
       </body>
     </html>
   );
