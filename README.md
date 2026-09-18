@@ -2,7 +2,7 @@
 
 > **Hackathon:** Bharat Builds #1: First Commit (WeMakeDevs x AWS)  
 > **Track:** Track 2: Deployed, With a URL (`SHIP IT`)  
-> **Team:** 2-Person 48-Hour Sprint (Frontend Lead & AWS Cloud Lead)
+> **Team:** 2-Person
 
 ---
 
