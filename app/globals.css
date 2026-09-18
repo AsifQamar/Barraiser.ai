@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --background: #090b10;
+  --foreground: #f1f5f9;
+  --surface: #0e121a;
+  --surface-hover: #131924;
+  --surface-raised: #141926;
+  --border: #1a2233;
+  --border-subtle: #141a26;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code, kbd, samp, pre {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Precision scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #242e42;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #364461;
+}
+
+/* Clean text selection */
+::selection {
+  background-color: rgba(245, 158, 11, 0.25);
+  color: #fef3c7;
+}
+
+/* Formal Print Stylesheet for Hiring Dossier */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  header, footer, nav, button, a[href="/"] {
+    display: none !important;
+  }
+  .print-clean {
+    border: 1px solid #cbd5e1 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .print-text-dark {
+    color: #0f172a !important;
+  }
+  .print-text-muted {
+    color: #475569 !important;
+  }
+}
