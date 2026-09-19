@@ -22,7 +22,7 @@ Engineering candidates often solve hundreds of LeetCode problems yet struggle in
 ```text
 ┌──────────────────────────────────────────────────────────────┐
 │                    AWS Amplify Hosting                       │
-│      (Next.js 15 + React 19 + Tailwind CSS + Monaco Editor)   │
+│      (Next.js 15 + React 19 + Tailwind CSS + Monaco Editor)  │
 └──────────────────────────────┬───────────────────────────────┘
                                │ HTTPS (REST Calls)
                                ▼
