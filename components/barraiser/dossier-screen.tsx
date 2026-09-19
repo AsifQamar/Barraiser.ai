@@ -14,7 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { DossierResponse, VerdictType } from "@/lib/types";
-import { Badge, ScoreBar, StageStepper, Tone, Wordmark } from "./ui";
+import { Badge, ScoreBar, Tone, Wordmark } from "./ui";
 import { CopyButton } from "./copy-button";
 import { HistoryDrawer } from "./history-drawer";
 
@@ -82,8 +82,7 @@ export function DossierScreen({ dossier }: DossierScreenProps) {
       {/* Top Header */}
       <header className="relative z-10 flex items-center justify-between px-5 py-4 sm:px-8 border-b border-border/50 backdrop-blur-sm">
         <Wordmark />
-        <div className="hidden sm:block">
-          <StageStepper current={2} />
+        <div className="hidden items-center gap-2 sm:flex">
         </div>
         <Button
           variant="ghost"

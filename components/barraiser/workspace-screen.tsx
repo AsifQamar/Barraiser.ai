@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { submitEvaluation } from "@/lib/api";
 import { SessionResponse, StarAnswer } from "@/lib/types";
-import { Badge, StageStepper, Wordmark } from "./ui";
+import { Badge, Wordmark } from "./ui";
 import { ChallengePanel, ChallengeTab } from "./challenge-panel";
 import { CodeEditor, SupportedLanguage } from "./code-editor";
 import { StarEditor } from "./star-editor";
@@ -142,8 +142,7 @@ export function WorkspaceScreen({ session }: WorkspaceScreenProps) {
           </div>
         </div>
 
-        <div className="hidden md:block">
-          <StageStepper current={1} />
+        <div className="hidden items-center gap-4 sm:flex">
         </div>
 
         <div className="flex items-center gap-2">
