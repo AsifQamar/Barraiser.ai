@@ -1,4 +1,4 @@
-# 🎯 BarRaiser.ai — Amazon Bar Raiser Mock Interview Copilot
+# 🎯 BarRaiser.ai - Amazon Bar Raiser Mock Interview Copilot
 
 > **Hackathon:** Bharat Builds #1: First Commit (WeMakeDevs x AWS)  
 > **Track:** Track 2: Deployed, With a URL (`SHIP IT`)  
@@ -145,5 +145,5 @@ npm start
 
 ## 👥 Authors
 
-* **Souvik (Frontend & UX Lead)** — Next.js 15 UI, Monaco Editor, STAR Form, Dossier & Design System.
-* **Asif Cloud & AI Lead** — AWS Bedrock (Nova Lite), DynamoDB, AWS Lambda, API Gateway & Amplify CI/CD.
+* **Souvik (Frontend & UX Lead)** - Next.js 15 UI, Monaco Editor, STAR Form, Dossier & Design System.
+* **Asif Cloud & AI Lead** - AWS Bedrock (Nova Lite), DynamoDB, AWS Lambda, API Gateway & Amplify CI/CD.
