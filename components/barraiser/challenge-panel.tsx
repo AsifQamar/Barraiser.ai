@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import ReactMarkdown from "react-markdown";
 import { cn } from "@/lib/utils";
 import { CodingChallenge, LeadershipPrinciple } from "@/lib/types";
 import { Badge } from "./ui";
@@ -104,8 +105,8 @@ function TechnicalBody({ challenge }: { challenge: CodingChallenge }) {
         </h2>
       </div>
 
-      <div className="text-[13.5px] leading-relaxed text-muted-foreground whitespace-pre-wrap">
-        {challenge.description}
+      <div className="text-[13.5px] leading-relaxed text-muted-foreground [&_strong]:text-foreground [&_strong]:font-semibold [&_ul]:list-disc [&_ul]:pl-5 [&_p]:mb-3">
+        <ReactMarkdown>{challenge.description}</ReactMarkdown>
       </div>
 
       {challenge.examples && challenge.examples.length > 0 && (

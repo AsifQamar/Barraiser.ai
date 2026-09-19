@@ -6,7 +6,7 @@ import { ArrowRight, History, Loader2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { createSession } from "@/lib/api";
-import { Badge, Kbd, StageStepper, Wordmark } from "./ui";
+import { Badge, Kbd, Wordmark } from "./ui";
 import { HistoryDrawer } from "./history-drawer";
 
 const ROLE_PRESETS = [
@@ -47,9 +47,9 @@ const LOADING_MESSAGES = [
 
 export function SetupScreen() {
   const router = useRouter();
-  const [role, setRole] = useState(ROLE_PRESETS[0].role);
-  const [preset, setPreset] = useState<string | null>(ROLE_PRESETS[0].id);
-  const [jd, setJd] = useState(ROLE_PRESETS[0].jd);
+  const [role, setRole] = useState("");
+  const [preset, setPreset] = useState<string | null>(null);
+  const [jd, setJd] = useState("");
   const [loading, setLoading] = useState(false);
   const [loadingStep, setLoadingStep] = useState(0);
   const [error, setError] = useState<string | null>(null);
@@ -113,7 +113,6 @@ export function SetupScreen() {
       <header className="relative z-10 flex items-center justify-between px-5 py-4 sm:px-8 border-b border-border/50 backdrop-blur-sm">
         <Wordmark />
         <div className="hidden items-center gap-2 sm:flex">
-          <StageStepper current={0} />
         </div>
         <Button
           variant="ghost"
