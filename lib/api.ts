@@ -2,8 +2,10 @@ import { SessionResponse, DossierResponse, StarAnswer } from "./types";
 import { mockSessionResponse, mockDossierResponse } from "./mockData";
 import { saveSessionToLocal, saveDossierToLocal } from "./storage";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || "";
-const USE_MOCKS = process.env.NEXT_PUBLIC_USE_MOCKS !== "false";
+// 1. Updated to match your Amplify variable exactly
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "";
+// 2. Hardcoded to false to permanently disable mock data in production
+const USE_MOCKS = false;
 
 export async function createSession(targetRole: string, jobDescription: string): Promise<SessionResponse> {
   if (USE_MOCKS || !API_BASE) {
