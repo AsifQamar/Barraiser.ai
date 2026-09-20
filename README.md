@@ -18,33 +18,9 @@ Engineering candidates often solve hundreds of LeetCode problems yet struggle in
 ---
 
 ## 🏗️ Architecture & AWS Services
+<img width="1224" height="1285" alt="image" src="https://github.com/user-attachments/assets/eb6a9258-5b39-4155-b631-012327450d74" />
 
-```text
-┌──────────────────────────────────────────────────────────────┐
-│                    AWS Amplify Hosting                       │
-│      (Next.js 15 + React 19 + Tailwind CSS + Monaco Editor)  │
-└──────────────────────────────┬───────────────────────────────┘
-                               │ HTTPS (REST Calls)
-                               ▼
-┌──────────────────────────────────────────────────────────────┐
-│                  Amazon API Gateway                          │
-│             (/api/session  |  /api/evaluate)                 │
-└──────────────────────────────┬───────────────────────────────┘
-                               │
-                               ▼
-┌──────────────────────────────────────────────────────────────┐
-│                      AWS Lambda                              │
-│                    (Node.js 20.x)                            │
-└──────────────────────────────┬───────────────────────────────┘
-                               │
-             ┌─────────────────┴─────────────────┐
-             ▼                                   ▼
-┌─────────────────────────┐             ┌─────────────────────────┐
-│     Amazon Bedrock      │             │     Amazon DynamoDB     │
-│  (Amazon Nova Lite)     │             │   (Single-Table Store:  │
-│  • Sub-2s Latency       │             │    BarRaiserSessions)   │
-│  • $0.06 / 1M tokens    │             │                         │
-└─────────────────────────┘             └─────────────────────────┘
+
 ```
 
 * **Frontend:** AWS Amplify Hosting running Next.js 15 (App Router, Turbopack, Tailwind CSS v4, `@monaco-editor/react`, Geist font).
