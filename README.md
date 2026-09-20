@@ -21,7 +21,6 @@ Engineering candidates often solve hundreds of LeetCode problems yet struggle in
 <img width="1224" height="1285" alt="image" src="https://github.com/user-attachments/assets/eb6a9258-5b39-4155-b631-012327450d74" />
 
 
-```
 
 * **Frontend:** AWS Amplify Hosting running Next.js 15 (App Router, Turbopack, Tailwind CSS v4, `@monaco-editor/react`, Geist font).
 * **AI Model:** Amazon Bedrock (Nova Lite) enforcing strict JSON schemas for problem generation and AST/STAR complexity auditing.
